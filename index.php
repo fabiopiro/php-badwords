@@ -1,18 +1,24 @@
 <!-- PHP -->
 <?php
+// echo $variabile - stampa il contenuto della variabile
+// explode(delimitatore, stringa) - crea un array dividendo una stringa ad ogni occorrenza del delimitatore
+// trim(stringa) - toglie gli spazi bianchi all’inizio e alla fine di una stringa
+// str_replace(porzioneDaModificare, conCosa, stringa) - sostituisce una porzione di una stringa con un nuovo valore
+// strlen(stringa) - ritorna la lunghezza di una stringa
+// strpos(stringa, cosaCercare) - cerca all’interno di una stringa un’altra stringa e torna la posizione in cui si trova
+// ucfirst(stringa) - ucwords(stringa) - rende maiuscolo il primo carattere della stringa / il primo carattere di ogni parola
+
 
 // paragrafo
 $paragrafo = "Cantami, o Diva, del pelide Achille l'ira funesta che infiniti addusse lutti agli Achei, molte anzi tempo all'Orco generose ravolse alme d'eroi, e di cani e d'augelli orrido pasto lor salme abbandonò (così di Giove l'alto consiglio s'adempìa), da quando primamente disgiunse aspra contesa il re de' prodi Atride e il divo Achille.";
 
 // bad word
-// $_GET["parola"];
-$parola = "Achille";
+$_GET["parola"];
+// $parola = "Achille";
 $censura = "***";
 
-$paragrafo_censurato = str_replace($parola, "***", $paragrafo);
-
-// <!-- strpos(stringa, cosaCercare) - cerca all’interno di una stringa un’altra stringa e torna la posizione in cui si trova -->
 // <!-- str_replace(porzioneDaModificare, conCosa, stringa) - sostituisce una porzione di una stringa con un nuovo valore -->
+$paragrafo_censurato = str_replace($_GET["parola"], "***", $paragrafo);
 
 ?>
 <!-- /PHP -->
@@ -34,7 +40,7 @@ $paragrafo_censurato = str_replace($parola, "***", $paragrafo);
         <p><?php echo strlen($paragrafo)?> caratteri.</p>
 
         <h2>Parola da censurare:</h2>
-        <p><?php echo $parola ?></p>
+        <p><?php echo $_GET["parola"] ?></p>
 
         <h2>Paragrafo censurato:</h2>
         <p><?php echo $paragrafo_censurato ?></p>
